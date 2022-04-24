@@ -1,8 +1,8 @@
 package other.designPattern.singleton
 
 fun singleTonKt(
-    packageName: String,
-    activityClass: String
+    activityClass: String,
+    packageName: String
 ) =
     """
 package ${packageName};
