@@ -1,18 +1,25 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.thughan.intellijtemplate</id>
-    <name>intellij-template</name>
+    <name>thug_han_mvvm</name>
     <vendor>thug-han</vendor>
 
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.thughan.intellijtemplate.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.thughan.intellijtemplate.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.thughan.intellijtemplate.services.MyApplicationService" />
+        <projectService serviceImplementation="com.github.thughan.intellijtemplate.services.MyProjectService" />
     </extensions>
 
     <applicationListeners>
         <listener class="com.github.thughan.intellijtemplate.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+            topic="com.intellij.openapi.project.ProjectManagerListener" />
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="other.DesignPatternProviderImpl" />
+    </extensions>
 </idea-plugin>

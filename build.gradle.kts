@@ -114,3 +114,7 @@ tasks {
         channels.set(listOf(properties("pluginVersion").split('-').getOrElse(1) { "default" }.split('.').first()))
     }
 }
+
+dependencies{
+    compileOnly(files("libs/wizard-template.jar"))
+}
