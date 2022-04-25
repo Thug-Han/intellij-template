@@ -1,22 +1,22 @@
-package other.designPattern.singleton
+package other.designpattern.singleton
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import other.designpattern.designPatternRecipe
 
 /**
  * @Date   : 2022/4/22
- * @Desc   :
  **/
-val singletonTemplate
+val designPatternTemplate
     get() = template {
-//        revision = 1
         name = "singleton"
-        description = "生成一个内部静太类singleton"
+        description = "生成一个内部静态内部类的singleton"
         minApi = MIN_API
-//        minBuildApi = MIN_API
 
+        // 显示在哪个类目
         category = Category.Other
         formFactor = FormFactor.Mobile
+        // 显示在哪些位置,就是NewActivity
         screens = listOf(
             WizardUiContext.ActivityGallery,
             WizardUiContext.MenuEntry,
@@ -33,13 +33,16 @@ val singletonTemplate
 
         val packageName = defaultPackageNameParameter
 
+        // 一些控件
         widgets(
+            // 文字控件
             TextFieldWidget(activityClass),
+            // 包名控件
             PackageNameWidget(packageName)
         )
 
         recipe = { data: TemplateData ->
-            singletonRecipe(
+            designPatternRecipe(
                 data as ModuleTemplateData,
                 activityClass.value,
                 packageName.value

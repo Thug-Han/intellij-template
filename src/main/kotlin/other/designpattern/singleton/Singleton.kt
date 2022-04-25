@@ -1,4 +1,4 @@
-package other.designPattern.singleton
+package other.designpattern.singleton
 
 fun singleTonKt(
     activityClass: String,

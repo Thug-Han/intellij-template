@@ -1,14 +1,14 @@
-package other.designPattern.singleton
+package other.designpattern
 
 import com.android.tools.idea.wizard.template.Language
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
+import other.designpattern.singleton.singleTonKt
 
 /**
  * @Date   : 2022/4/22
- * @Desc   :
  **/
-fun RecipeExecutor.singletonRecipe(
+fun RecipeExecutor.designPatternRecipe(
     moduleData: ModuleTemplateData,
     activityClass: String,
     packageName: String
