@@ -2,7 +2,7 @@ package other
 
 import com.android.tools.idea.wizard.template.Template
 import com.android.tools.idea.wizard.template.WizardTemplateProvider
-import other.designpattern.singleton.designPatternTemplate
+import other.designpattern.designPatternTemplate
 
 /**
  * @Date : 2022/4/22
