@@ -2,6 +2,7 @@ package other.designpattern
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import other.designpattern.singleton.SingleTonCategory
 
 /**
  * @Date   : 2022/4/22
@@ -27,6 +28,13 @@ val designPatternTemplate
             default = DesignCategory.SINGLETON
         }
 
+        val singleTonCategory = enumParameter<SingleTonCategory> {
+            name = "Select a SingleTon type"
+            default = SingleTonCategory.STATIC
+            // 决定这个条目是否展示
+            visible = { designPattern.value == DesignCategory.SINGLETON }
+        }
+
         val activityClass = stringParameter {
             name = "Class Name"
             default = "Singleton"
@@ -36,7 +44,6 @@ val designPatternTemplate
 
         val packageName = stringParameter {
             name = "Package name"
-            visible = { !isNewModule }
             default = "com.thughan.design"
             constraints = listOf(Constraint.PACKAGE)
             suggest = { packageName }
@@ -46,6 +53,7 @@ val designPatternTemplate
         widgets(
             // 选择生成的设计模式种类
             EnumWidget(designPattern),
+            EnumWidget(singleTonCategory),
             // 生成文件语言控件
             LanguageWidget(),
             // 文字控件
